@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.ComponentModel;
+using System.Windows;
 
 namespace MapApplication
 {
@@ -10,6 +11,12 @@ namespace MapApplication
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MariaViewModel();
+        }
+
+        private void MainWindow_OnClosing(object sender, CancelEventArgs e)
+        {
+            MariaUserControl.Dispose();
         }
     }
 }

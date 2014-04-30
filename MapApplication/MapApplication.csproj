@@ -122,6 +122,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapViewModel.cs" />
+    <Compile Include="MariaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
