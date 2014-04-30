@@ -54,6 +54,9 @@
     <Reference Include="TPG.GeoFramework.Core">
       <HintPath>packages\TPG.Maria.MariaUserControl.1.1.0.602\lib\net40\TPG.GeoFramework.Core.dll</HintPath>
     </Reference>
+    <Reference Include="TPG.GeoFramework.GridLayer.Contracts">
+      <HintPath>packages\TPG.Maria.GridLayer.1.1.0.603\lib\net40\TPG.GeoFramework.GridLayer.Contracts.dll</HintPath>
+    </Reference>
     <Reference Include="TPG.GeoFramework.Map.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=e1f08960486e3cdd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\TPG.Maria.MapLayer.1.1.0.602\lib\net40\TPG.GeoFramework.Map.Core.dll</HintPath>
@@ -80,6 +83,12 @@
     <Reference Include="TPG.Maria.Contracts, Version=1.1.0.0, Culture=neutral, PublicKeyToken=e1f08960486e3cdd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\TPG.Maria.Common.1.1.0.0\lib\net40\TPG.Maria.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.Maria.GridContracts">
+      <HintPath>packages\TPG.Maria.GridLayer.1.1.0.603\lib\net40\TPG.Maria.GridContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.Maria.GridLayer">
+      <HintPath>packages\TPG.Maria.GridLayer.1.1.0.603\lib\net40\TPG.Maria.GridLayer.dll</HintPath>
     </Reference>
     <Reference Include="TPG.Maria.Internal">
       <HintPath>packages\TPG.Maria.MariaUserControl.1.1.0.602\lib\net40\TPG.Maria.Internal.dll</HintPath>
@@ -116,6 +125,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GridViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

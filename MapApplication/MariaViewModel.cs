@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using TPG.Maria.Contracts;
+using TPG.Maria.GridLayer;
 using TPG.Maria.MapLayer;
 
 namespace MapApplication
@@ -8,6 +9,7 @@ namespace MapApplication
     {
         public ObservableCollection<IMariaLayer> Layers { get; set; }
         public MapViewModel MapViewModel { get; set; }
+        public GridViewModel GridViewModel { get; set; }
 
         public MariaViewModel()
         {
@@ -16,6 +18,10 @@ namespace MapApplication
             var mariaMapLayer = new MapLayer();
             MapViewModel = new MapViewModel(mariaMapLayer);
             Layers.Add(mariaMapLayer);
+
+            var mariaGridLayer = new GridLayer();
+            GridViewModel = new GridViewModel(mariaGridLayer);
+            Layers.Add(mariaGridLayer);
         }
 
     }
