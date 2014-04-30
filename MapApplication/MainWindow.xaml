@@ -1,0 +1,14 @@
+﻿<Window x:Class="MapApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mariaUserControl="clr-namespace:TPG.Maria.MariaUserControl;assembly=TPG.Maria.MariaUserControl"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <mariaUserControl:MariaUserControl 
+            Name="MariaUserControl"
+            IsScaleBarVisible="True"
+            IsPanNavigationVisible="True"
+            IsRulerVisible="True"/>
+        
+    </Grid>
+</Window>
