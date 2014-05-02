@@ -1,11 +1,12 @@
 ﻿using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using TPG.GeoUnits;
 using TPG.Maria.MapContracts;
 
 namespace MapApplication
 {
-    public class MapViewModel
+    public class MapViewModel : INotifyPropertyChanged
     {
         private readonly IMariaMapLayer _mariaMapLayer;
         public ObservableCollection<string> ActiveMapNames { get; set; }
@@ -21,6 +22,16 @@ namespace MapApplication
             set
             {
                 _mariaMapLayer.GeoContext.CenterScale = value;
+            }
+        }
+
+        public string ActiveMapName
+        {
+            get { return _mariaMapLayer.ActiveMapName; }
+            set
+            {
+                _mariaMapLayer.ActiveMapName = value;
+                OnPropertyChanged("ActiveMapName");
             }
         }
 
@@ -42,6 +53,14 @@ namespace MapApplication
             ActiveMapNames.Clear();
             foreach (string activeMapName in _mariaMapLayer.ActiveMapNames)
                 ActiveMapNames.Add(activeMapName);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

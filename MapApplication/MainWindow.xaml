@@ -13,6 +13,12 @@
             Layers="{Binding Layers}"
             CenterPosition="{Binding MapViewModel.CenterPosition}"
             CenterScale="{Binding MapViewModel.Scale}"/>
+        <ComboBox ItemsSource="{Binding MapViewModel.ActiveMapNames}"
+                  SelectedItem="{Binding MapViewModel.ActiveMapName}"
+                  VerticalAlignment="Top"
+                  HorizontalAlignment="Right"
+                  Width="200"
+                  ToolTip="{Binding MapViewModel.ActiveMapName}"/>
         
     </Grid>
 </Window>
