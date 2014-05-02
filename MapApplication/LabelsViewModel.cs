@@ -7,6 +7,12 @@ namespace MapApplication
     {
         private readonly IMariaLabelsLayer _mariaLabelsLayer;
 
+        public double Opacity
+        {
+            get { return _mariaLabelsLayer.Opacity; }
+            set { _mariaLabelsLayer.Opacity = value; }
+        }
+
         public LabelsViewModel(IMariaLabelsLayer mariaLabelsLayer)
         {
             _mariaLabelsLayer = mariaLabelsLayer;

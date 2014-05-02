@@ -32,6 +32,20 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <!-- Simple control for controlling the labels opacity. -->
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Background>
+                    <SolidColorBrush Opacity="0.8" Color="White"/>
+                </StackPanel.Background>
+
+                <Label Content="Label Opacity" Width="90"/>
+                <Slider Value="{Binding LabelsViewModel.Opacity}"
+                        Minimum="0.0" 
+                        Maximum="1.0"
+                        Width="60">
+                </Slider>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>
