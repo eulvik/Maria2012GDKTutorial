@@ -13,12 +13,25 @@
             Layers="{Binding Layers}"
             CenterPosition="{Binding MapViewModel.CenterPosition}"
             CenterScale="{Binding MapViewModel.Scale}"/>
-        <ComboBox ItemsSource="{Binding MapViewModel.ActiveMapNames}"
-                  SelectedItem="{Binding MapViewModel.ActiveMapName}"
-                  VerticalAlignment="Top"
-                  HorizontalAlignment="Right"
-                  Width="200"
-                  ToolTip="{Binding MapViewModel.ActiveMapName}"/>
         
+        <StackPanel Orientation="Vertical" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top">
+            <!-- Binding to the map packages that are available from the service. -->
+            <ComboBox ItemsSource="{Binding MapViewModel.ActiveMapNames}"
+                      SelectedItem="{Binding MapViewModel.ActiveMapName}"
+                      ToolTip="{Binding MapViewModel.ActiveMapName}"/>
+            
+            <!-- Binding to all the vailable grids. Se that we also can bind directly to the Visible 
+            property of each grid with a CheckBox.-->
+            <ListView ItemsSource="{Binding GridViewModel.Grids}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Name}" Width="120"/>
+                            <CheckBox IsChecked="{Binding Visible}" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Window>
