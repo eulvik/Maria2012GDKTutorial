@@ -73,6 +73,31 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\TPG.Maria.MapLayer.1.1.0.602\lib\net40\TPG.GeoFramework.MapServiceInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="TPG.GeoFramework.Style.Core.Contracts, Version=1.1.0.0, Culture=neutral, PublicKeyToken=e1f08960486e3cdd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\TPG.GeoFramework.Style.Core.Contracts.1.1.0.603\lib\net40\TPG.GeoFramework.Style.Core.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.GeoFramework.Symbols.Contracts">
+      <HintPath>packages\TPG.GeoFramework.Symbols.Contracts.1.1.0.603\lib\net40\TPG.GeoFramework.Symbols.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.GeoFramework.Track.Proto">
+      <HintPath>packages\TPG.Maria.TrackLayer.1.1.0.603\lib\net40\TPG.GeoFramework.Track.Proto.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.GeoFramework.TrackCore">
+      <HintPath>packages\TPG.Maria.TrackLayer.1.1.0.603\lib\net40\TPG.GeoFramework.TrackCore.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.GeoFramework.TrackCore.Contracts">
+      <HintPath>packages\TPG.Maria.TrackLayer.1.1.0.603\lib\net40\TPG.GeoFramework.TrackCore.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.GeoFramework.TrackLayer">
+      <HintPath>packages\TPG.Maria.TrackLayer.1.1.0.603\lib\net40\TPG.GeoFramework.TrackLayer.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.GeoFramework.TrackLayer.Contracts">
+      <HintPath>packages\TPG.Maria.TrackLayer.1.1.0.603\lib\net40\TPG.GeoFramework.TrackLayer.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.GeoFramework.TrackServiceClient">
+      <HintPath>packages\TPG.Maria.TrackLayer.1.1.0.603\lib\net40\TPG.GeoFramework.TrackServiceClient.dll</HintPath>
+    </Reference>
     <Reference Include="TPG.GeoUnits">
       <HintPath>packages\TPG.Maria.MariaUserControl.1.1.0.602\lib\net40\TPG.GeoUnits.dll</HintPath>
     </Reference>
@@ -104,6 +129,12 @@
     <Reference Include="TPG.Maria.MariaUserControl">
       <HintPath>packages\TPG.Maria.MariaUserControl.1.1.0.602\lib\net40\TPG.Maria.MariaUserControl.dll</HintPath>
     </Reference>
+    <Reference Include="TPG.Maria.TrackContracts">
+      <HintPath>packages\TPG.Maria.TrackLayer.1.1.0.603\lib\net40\TPG.Maria.TrackContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.Maria.TrackLayer">
+      <HintPath>packages\TPG.Maria.TrackLayer.1.1.0.603\lib\net40\TPG.Maria.TrackLayer.dll</HintPath>
+    </Reference>
     <Reference Include="TPG.ServiceModel, Version=1.1.0.0, Culture=neutral, PublicKeyToken=e1f08960486e3cdd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\TPG.Maria.MapLayer.1.1.0.602\lib\net40\TPG.ServiceModel.dll</HintPath>
@@ -117,6 +148,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TrackViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
