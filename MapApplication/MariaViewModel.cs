@@ -10,6 +10,7 @@ namespace MapApplication
         public ObservableCollection<IMariaLayer> Layers { get; set; }
         public MapViewModel MapViewModel { get; set; }
         public GridViewModel GridViewModel { get; set; }
+        public LabelsViewModel LabelsViewModel { get; set; }
 
         public MariaViewModel()
         {
@@ -22,7 +23,10 @@ namespace MapApplication
             var mariaGridLayer = new GridLayer();
             GridViewModel = new GridViewModel(mariaGridLayer);
             Layers.Add(mariaGridLayer);
-        }
 
+            var mariaLabelsLayer = new LabelsLayer(mariaMapLayer);
+            LabelsViewModel = new LabelsViewModel(mariaLabelsLayer);
+            Layers.Add(mariaLabelsLayer);
+        }
     }
 }
