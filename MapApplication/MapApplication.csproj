@@ -48,11 +48,27 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="TPG.GeoFramework.Contracts">
-      <HintPath>packages\TPG.Maria.MariaUserControl.1.1.0.602\lib\net40\TPG.GeoFramework.Contracts.dll</HintPath>
+    <Reference Include="TPG.DrawObjects.Contracts">
+      <HintPath>packages\TPG.Maria.DrawObjectLayer.1.1.0.604\lib\net40\TPG.DrawObjects.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.DrawObjects.Contracts.Data">
+      <HintPath>packages\TPG.Maria.DrawObjectLayer.1.1.0.604\lib\net40\TPG.DrawObjects.Contracts.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.DrawObjects.Data">
+      <HintPath>packages\TPG.Maria.DrawObjectLayer.1.1.0.604\lib\net40\TPG.DrawObjects.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.DrawObjects.Data.Filters">
+      <HintPath>packages\TPG.Maria.DrawObjectLayer.1.1.0.604\lib\net40\TPG.DrawObjects.Data.Filters.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.GeoFramework.Contracts, Version=1.1.0.0, Culture=neutral, PublicKeyToken=e1f08960486e3cdd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\TPG.Maria.DrawObjectLayer.1.1.0.604\lib\net40\TPG.GeoFramework.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="TPG.GeoFramework.Core">
       <HintPath>packages\TPG.Maria.MariaUserControl.1.1.0.602\lib\net40\TPG.GeoFramework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.GeoFramework.DrawObjectLayer.Contracts">
+      <HintPath>packages\TPG.Maria.DrawObjectLayer.1.1.0.604\lib\net40\TPG.GeoFramework.DrawObjectLayer.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="TPG.GeoFramework.GridLayer.Contracts">
       <HintPath>packages\TPG.Maria.GridLayer.1.1.0.603\lib\net40\TPG.GeoFramework.GridLayer.Contracts.dll</HintPath>
@@ -76,6 +92,10 @@
     <Reference Include="TPG.GeoFramework.Style.Core.Contracts, Version=1.1.0.0, Culture=neutral, PublicKeyToken=e1f08960486e3cdd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\TPG.GeoFramework.Style.Core.Contracts.1.1.0.603\lib\net40\TPG.GeoFramework.Style.Core.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.GeoFramework.StyleCore, Version=1.1.0.0, Culture=neutral, PublicKeyToken=e1f08960486e3cdd, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\TPG.Maria.DrawObjectLayer.1.1.0.604\lib\net40\TPG.GeoFramework.StyleCore.dll</HintPath>
     </Reference>
     <Reference Include="TPG.GeoFramework.Symbols.Contracts">
       <HintPath>packages\TPG.GeoFramework.Symbols.Contracts.1.1.0.603\lib\net40\TPG.GeoFramework.Symbols.Contracts.dll</HintPath>
@@ -108,6 +128,12 @@
     <Reference Include="TPG.Maria.Contracts, Version=1.1.0.0, Culture=neutral, PublicKeyToken=e1f08960486e3cdd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\TPG.Maria.Common.1.1.0.0\lib\net40\TPG.Maria.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.Maria.DrawObjectContracts">
+      <HintPath>packages\TPG.Maria.DrawObjectLayer.1.1.0.604\lib\net40\TPG.Maria.DrawObjectContracts.dll</HintPath>
+    </Reference>
+    <Reference Include="TPG.Maria.DrawObjectLayer">
+      <HintPath>packages\TPG.Maria.DrawObjectLayer.1.1.0.604\lib\net40\TPG.Maria.DrawObjectLayer.dll</HintPath>
     </Reference>
     <Reference Include="TPG.Maria.GridContracts">
       <HintPath>packages\TPG.Maria.GridLayer.1.1.0.603\lib\net40\TPG.Maria.GridContracts.dll</HintPath>
@@ -148,6 +174,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DrawObjectViewModel.cs" />
     <Compile Include="TrackViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

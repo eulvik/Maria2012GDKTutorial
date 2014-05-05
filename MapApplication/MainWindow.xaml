@@ -4,6 +4,18 @@
         xmlns:mariaUserControl="clr-namespace:TPG.Maria.MariaUserControl;assembly=TPG.Maria.MariaUserControl"
         Title="MainWindow" Height="350" Width="525"
         Closing="MainWindow_OnClosing">
+
+    <Window.InputBindings>
+        <MouseBinding Command="{Binding DrawObjectViewModel.EditPointsCommand}" Gesture="LeftDoubleClick"/>
+        <KeyBinding Command="{Binding DrawObjectViewModel.DrawObjectLayer.EditPointsCommand}" Gesture="F2"/>
+        <KeyBinding Command="{Binding DrawObjectViewModel.DeleteDrawObjectCommand}" Gesture="Delete"/>
+        <KeyBinding Command="{Binding DrawObjectViewModel.CopyCommand}" Gesture="Ctrl+C" />
+        <KeyBinding Command="{Binding DrawObjectViewModel.CutCommand}" Gesture="Ctrl+X" />
+        <KeyBinding Command="{Binding DrawObjectViewModel.PasteCommand}" Gesture="Ctrl+V" />
+        <KeyBinding Command="{Binding UndoCommand, ElementName=MariaUserControl}" Gesture="Ctrl+Z" />
+        <KeyBinding Command="{Binding RedoCommand, ElementName=MariaUserControl}" Gesture="Ctrl+Y" />
+    </Window.InputBindings>
+    
     <Grid>
         <mariaUserControl:MariaUserControl 
             Name="MariaUserControl"
@@ -16,12 +28,14 @@
         
         <StackPanel Orientation="Vertical" Width="150" HorizontalAlignment="Right" VerticalAlignment="Top">
             <!-- Binding to the map packages that are available from the service. -->
+            <Label Content="Maps" FontWeight="Bold"/>
             <ComboBox ItemsSource="{Binding MapViewModel.ActiveMapNames}"
                       SelectedItem="{Binding MapViewModel.ActiveMapName}"
                       ToolTip="{Binding MapViewModel.ActiveMapName}"/>
             
             <!-- Binding to all the vailable grids. Se that we also can bind directly to the Visible 
             property of each grid with a CheckBox.-->
+            <Label Content="Grids" FontWeight="Bold"/>
             <ListView ItemsSource="{Binding GridViewModel.Grids}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -46,6 +60,9 @@
                         Width="60">
                 </Slider>
             </StackPanel>
+            
+            <!-- Selected tracks display panel -->
+            <Label Content="Selected Tracks" FontWeight="Bold"/>
             <ListView ItemsSource="{Binding TrackViewModel.SelectedTracks}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -63,6 +80,28 @@
                             <Label Content="Pos" Grid.Row="1" Grid.Column="0"/>
                             <Label Content="{Binding Pos}" Grid.Row="1" Grid.Column="1"/>
                         </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Workflows for creating draw objects -->
+            <Label Content="Draw Objects" FontWeight="Bold"></Label>
+            <ListView Width="150" HorizontalAlignment="Right" VerticalAlignment="Top" ItemsSource="{Binding DrawObjectViewModel.Workflows}">
+                <ListView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="2"/>
+                    </ItemsPanelTemplate>
+                </ListView.ItemsPanel>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Button Width="60" Height="60" 
+                            Command="{Binding DataContext.DrawObjectViewModel.CreationWorkflowActivatedCommand, 
+                                              RelativeSource={RelativeSource AncestorType=Window}}" 
+                            CommandParameter="{Binding}" ToolTip="{Binding Name}">
+                            <Button.Content>
+                                <Image Source="{Binding Image}"/>
+                            </Button.Content>
+                        </Button>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
