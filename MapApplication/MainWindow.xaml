@@ -46,6 +46,26 @@
                         Width="60">
                 </Slider>
             </StackPanel>
+            <ListView ItemsSource="{Binding TrackViewModel.SelectedTracks}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="110"/>
+                                </Grid.ColumnDefinitions>
+                            <Label Content="Speed"/>
+                            <Label Content="{Binding Speed}" Grid.Column="1"/>
+                            <Label Content="Pos" Grid.Row="1" Grid.Column="0"/>
+                            <Label Content="{Binding Pos}" Grid.Row="1" Grid.Column="1"/>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackPanel>
     </Grid>
 </Window>
