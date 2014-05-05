@@ -41,20 +41,26 @@ namespace MapApplication
         private void OnTrackSelectionChanged(object sender, TrackSelectionChangedEventArgs args)
         {
             //Remove tracks that has been deselected.
-            var deselectedTracksToRemove = SelectedTracks.Where(st => args.DeselectedTracks.Any(dt => st.TrackItemId.InstanceId == dt.InstanceId)).ToList();
-            foreach (ITrackData trackDataToRemove in deselectedTracksToRemove)
+            if (args.DeselectedTracks.Any())
             {
-                SelectedTracks.Remove(trackDataToRemove);
+                var deselectedTracksToRemove = SelectedTracks.Where(st => args.DeselectedTracks.Any(dt => st.TrackItemId.InstanceId == dt.InstanceId)).ToList();
+                foreach (ITrackData trackDataToRemove in deselectedTracksToRemove)
+                {
+                    SelectedTracks.Remove(trackDataToRemove);
+                }
             }
 
             //Extract the track data objects using selected id.
-            string[] selectedIds = args.SelectedTracks.Select(x => x.InstanceId).ToArray();
-            ITrackData[] selectedTrackDatas = _mariaTracksLayer.GetTrackData(selectedIds);
-
-            //Push new selected tracks to our list of selected tracks.
-            foreach (ITrackData selectedTrackData in selectedTrackDatas)
+            if (args.SelectedTracks.Any())
             {
-                SelectedTracks.Add(selectedTrackData);
+                string[] selectedIds = args.SelectedTracks.Select(x => x.InstanceId).ToArray();
+                ITrackData[] selectedTrackDatas = _mariaTracksLayer.GetTrackData(selectedIds);
+
+                //Push new selected tracks to our list of selected tracks.
+                foreach (ITrackData selectedTrackData in selectedTrackDatas)
+                {
+                    SelectedTracks.Add(selectedTrackData);
+                }
             }
         }
     }
